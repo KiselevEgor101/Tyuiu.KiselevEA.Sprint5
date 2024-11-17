@@ -28,7 +28,7 @@ namespace Tyuiu.KiselevEA.Sprint5.Task0.V5
 
 
             Console.WriteLine("x = " + x);
-
+              
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
