@@ -24,7 +24,7 @@ namespace Tyuiu.KiselevEA.Sprint5.Task0.V5
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int x = 10;
+            int x = 3;
 
 
             Console.WriteLine("x = " + x);
