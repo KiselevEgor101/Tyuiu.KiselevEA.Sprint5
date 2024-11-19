@@ -6,7 +6,7 @@ namespace Tyuiu.KiselevEA.Sprint5.Task1.V29.Lib
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
-            string stry = string.Empty;
+            string strY = string.Empty;
             string path = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask1.txt" });
            
             FileInfo fileInfo = new FileInfo(path);
@@ -18,22 +18,18 @@ namespace Tyuiu.KiselevEA.Sprint5.Task1.V29.Lib
             }
             int x;
             double y;
-            
+
             for (x = startValue; x <= stopValue; x++)
             {
                 y = Math.Round((Math.Sin(x) / (x + 1.2)) + Math.Cos(x) * 7 * x - 2, 2);
-                stry = Convert.ToString(y);
-            }           
-            if (x != stopValue)
-            {
-                File.AppendAllText(path, stry + Environment.NewLine);
+                strY = Convert.ToString(y);
+                if (x + 1.2 == 0) y = 0;
+
+                if (x != stopValue) File.AppendAllText(path, strY + Environment.NewLine);
+                else File.AppendAllText(path, strY);
             }
-            else
-            {
-                File.AppendAllText(path, stry);
-            }
-            
-            return path;
+
+                return path;
         }
     }
 }
