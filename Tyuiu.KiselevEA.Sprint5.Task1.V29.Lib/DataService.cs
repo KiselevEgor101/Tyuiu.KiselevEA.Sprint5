@@ -2,7 +2,7 @@
 using tyuiu.cources.programming.interfaces.Sprint5;
 namespace Tyuiu.KiselevEA.Sprint5.Task1.V29.Lib
 {
-    public class DataService
+    public class DataService : ISprint5Task1V29
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
