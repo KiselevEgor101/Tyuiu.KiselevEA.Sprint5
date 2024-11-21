@@ -1,5 +1,5 @@
-﻿using Tyuiu.KiselevEA.Sprint5.Task1.V29.Lib;
-namespace Tyuiu.KiselevEA.Sprint5.Task1.V29
+﻿using Tyuiu.KiselevEA.Sprint5.Task2.V14.Lib;
+namespace Tyuiu.KiselevEA.Sprint5.Task2.V14
 {
     internal class Program
     {
@@ -10,12 +10,12 @@ namespace Tyuiu.KiselevEA.Sprint5.Task1.V29
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #5                                                               *");
             Console.WriteLine("* Тема: Класс File. Запись данных в текстовый файл                        *");
-            Console.WriteLine("* Задание #1                                                              *");
-            Console.WriteLine("* Вариант #29                                                             *");
+            Console.WriteLine("* Задание #2                                                              *");
+            Console.WriteLine("* Вариант #14                                                             *");
             Console.WriteLine("* Выполнил: Киселев Егор Алексеевич | СМАРТб-24-1                         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Вычислить выражение и вывести его в файл .txt                           *");
+            Console.WriteLine("* Вычислить выражение и вывести его в файл .csv                           *");
             Console.WriteLine("*                                                                         *");
             Console.WriteLine("*                                                                         *");
             Console.WriteLine("***************************************************************************");
@@ -23,26 +23,37 @@ namespace Tyuiu.KiselevEA.Sprint5.Task1.V29
             Console.WriteLine("***************************************************************************");
 
 
-            int startValue = -5;
-            int stopValue = 5;
 
             DataService ds = new DataService();
 
-            Console.WriteLine("Начальное значение диапазона = " + startValue);
-            Console.WriteLine("Конечное значение диапазона = " + stopValue);
+            int[,] matrix = new int[3, 3] { { -3, -6, -3 },
+
+                                              { 6, 8, 3},
+
+                                             { -6, -5, 5} };
+            int rows = matrix.GetUpperBound(0) + 1;
+            int columns = matrix.Length / rows;
+
+            Console.WriteLine("* МАССИВ:           *");
+
+            for (int i=0;i < rows; i++)
+            {
+                for(int j = 0; j <columns; j++)
+                {
+                    Console.Write($"{matrix[i, j]} \t");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            string res = ds.SaveToFileTextData(startValue, stopValue);
+            string res = ds.SaveToFileTextData(matrix);
             Console.WriteLine("Файл: " + res);
             Console.WriteLine("Создан!");
             Console.ReadKey();
-
-            
-
-            
         }
     }
 }
