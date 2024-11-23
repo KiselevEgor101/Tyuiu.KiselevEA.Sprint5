@@ -17,7 +17,7 @@ namespace Tyuiu.KiselevEA.Sprint5.Task3.V8.Lib
                 File.Delete(path);
             }
 
-            double y = ((Math.Pow(x, 2) + 1) / (3 * x + 4));
+            double y = (Math.Pow(x, 2) + 1) / (3 * x + 4);
 
             y = Math.Round(y, 2);
 
