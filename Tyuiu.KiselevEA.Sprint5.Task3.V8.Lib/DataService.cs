@@ -19,7 +19,7 @@ namespace Tyuiu.KiselevEA.Sprint5.Task3.V8.Lib
 
             double y = (Math.Pow(x, 2) + 1) / (3 * x + 4);
 
-            y = Math.Round(y, 2);
+            y = Math.Round(y, 3);
 
             using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate), Encoding.UTF8))
             {
