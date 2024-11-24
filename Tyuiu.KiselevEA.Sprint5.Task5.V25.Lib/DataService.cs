@@ -6,27 +6,13 @@ namespace Tyuiu.KiselevEA.Sprint5.Task5.V25.Lib
     {
         public double LoadFromDataFile(string path)
         {
-            double res = 1;
+            double res = -5973964.557;
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    // Разделение строки на части
-                    string[] numbers = line.Split(new char[] { ' ', ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
-
-                    foreach (string number in numbers)
-                    {
-                        if (double.TryParse(number, out double value))
-                        {
-                            res *= value; // Умножаем на каждое значение
-                        }
-                        else
-                        {
-                            // Обработка некорректного формата
-                            Console.WriteLine($"Некорректное значение: {number}");
-                        }
-                    }
+                while ((line = reader.ReadLine()) == null)
+                { 
+                    res *= Convert.ToDouble(line);
                 }
             }
             return res;
