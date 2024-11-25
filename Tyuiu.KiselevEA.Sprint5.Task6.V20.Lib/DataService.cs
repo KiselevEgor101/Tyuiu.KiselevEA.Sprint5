@@ -7,20 +7,26 @@ namespace Tyuiu.KiselevEA.Sprint5.Task6.V20.Lib
         public int LoadFromDataFile(string path)
         {
             int count = 0;
-
-            using (StreamReader reader = new StreamReader(path))
+            int a = 0;
+            using (StreamReader sr = new StreamReader(path))
             {
                 string line;
-                while ((line = reader.ReadLine()) != null)
+                while ((line = sr.ReadLine()) != null)
                 {
-                    
-                    var words = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-
-                    
-                    count += words.Count(word => word.Length == 6);
+                    for (int i = 0; i < line.Length; i++)
+                    {
+                        if (line[i] == ' ')
+                        {
+                            if (a == 6) count++;
+                            a = 0;
+                        }
+                        else
+                        {
+                            a++;
+                        }
+                    }
                 }
             }
-
             return count;
         }
     }
