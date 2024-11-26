@@ -15,37 +15,37 @@ namespace Tyuiu.KiselevEA.Sprint5.Task7.V19.Lib
             {
                 File.Delete(pathsave);
             }
+            //код для числовых выражение
+            //string strline = "";
+            //using(StreamReader reader = new StreamReader(path))
+            //{
+                //string line;
+                //while ((line = reader.ReadLine()) != null)
+                //{
+                //for (int i = 0; i < line.Length; i++)
+                //{
+                   //if ((line[i] != 'сс') && (line[i] != 'С'))
+                   //{
+                     //strline += line[i];
+                   //}
+                //}
 
-            string strline = "";
-            using(StreamReader reader = new StreamReader(path))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                for (int i = 0; i < line.Length; i++)
-                {
-                   if ((line[i] != 'с') && (line[i] != 'С'))
-                   {
-                      strline += line[i];
-                   }
-                }
+            //File.AppendAllText(pathsave, strline + Environment.NewLine);
+            //strline = "";
 
-            File.AppendAllText(pathsave, strline + Environment.NewLine);
-            strline = "";
-
-                }
-            }
-            return pathsave;
-
-
-            //код под другое условие
-            //string basefile = File.ReadAllText(path);
-
-            //string cond = basefile.Replace("сс", "с").Replace("Сс","С");
-
-
-            //File.WriteAllText(pathsave, cond);
+                //}
+            //}
             //return pathsave;
+
+
+            
+            string basefile = File.ReadAllText(path);
+
+            string cond = basefile.Replace("сс", "").Replace("Сс","");
+
+
+            File.WriteAllText(pathsave, cond);
+            return pathsave;
         }
     }
 }
